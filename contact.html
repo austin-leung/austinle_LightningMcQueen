@@ -1,0 +1,186 @@
+<!DOCTYPE html> 	<!-- Tells the browser this is HTML 5 -->
+<html lang="en"> 	<!-- Root of the html document and is in English -->
+
+<head>
+
+	<!-- META tags help search engines identify your content more easily -->
+	<meta charset="utf-8" /> <!-- Specifies the character encoding for the HTML document -->
+	<meta name="author" content="Austin Leung">
+	<meta name="keywords" content="Carnegie Mellon University, Information Systems, resume">
+	<meta name="description" content="Austin Leung Professional Website">
+
+	<!-- The title will appear in the menu bar of the browser -->
+	<title>Austin Leung</title>
+	
+    <link rel="stylesheet" media="all" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui.css" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"> </script>
+    <script type="text/javascript" src="js/scripts.js" > </script>
+    <script type="text/javascript" src="js/jquery-ui.js" > </script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+    	$(function() {
+    		$('#container-graph').highcharts({
+    			    title: {
+    			    	text: 'Weekly Workload by Month',
+    			    },
+
+    			    subtitle: {
+    			    	text: 'Hours per week of work from 2012-2016',
+    			    },
+
+
+    			    xAxis: {
+    			    	title: {
+    			    		text: 'Months'
+    			    	},
+    			    	categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    			    		'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    			    },
+
+    			    yAxis: {
+    			    	title: {
+    			    		text: 'Weekly Workload in Hours'
+    			    	},
+    			    },
+
+    			    legend: {
+    			    	layout: 'vertical',
+    			    	align: 'right',
+    			    	verticalAlign: 'middle',
+    			    },
+
+    			    tooltip: {
+    			    	valueSuffix: ' hours per week(on average)'
+    			    },
+
+
+    			    series: [{
+    			    	name: '2012',
+    			    	data: [1, 3, 2, 2, 4, 7, 1, 1, 2, 3, 2, 4]
+    			    }, {
+    			    	name: '2013',
+    			    	data: [4, 3, 5, 2, 7, 8, 2, 3, 6, 4, 4, 5]
+    			    }, {
+    			    	name: '2014',
+    			    	data: [4, 4, 5, 7, 14, 13, 11, 6, 5, 6, 4, 5]
+    			    }, {
+    			    	name: '2015',
+    			    	data: [3, 9, 9, 5, 7, 15, 5, 8, 6, 5, 4, 11]
+    			    }, {
+    			    	name: '2016',
+    			    	data: [4, 11, 8, 6, 15, 20, 7, 8, 4, 7, 5, 6]
+    			    }],
+    			});
+    	});
+    </script>
+	
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo">Jane Doe</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">About</a></li>
+            <li class="active"><a href="projects.html">Projects</a> </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+	
+
+	<h3>Contact</h3>
+	  <p>Please use the below map to find me.</p>
+	  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.4051580678115!2d-79.94556654909066!3d40.4441687617928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f2218bddc99f%3A0xeea6ccadbf7b721e!2sWarner+Hall%2C+5000+Forbes+Ave%2C+Pittsburgh%2C+PA+15213!5e0!3m2!1sen!2sus!4v1552116677725" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+	  </iframe>
+
+	  <p>Please check to see when I'm free.</p>
+
+	  <div id="container-graph"></div>
+
+	  <p>Please use the below form to get in touch with me.</p>
+	  
+	  <form onsubmit="return validate()">
+	  
+	  <fieldset>
+		  <legend>Tell me more about yourself</legend>
+		  <label for="uname">Name:</label> <br/>
+		  <input type="text" id="uname" name="uname" value="Your Name" size="20" maxlength ="250"><br/><br/>
+		  <label for="txtDate">Your date of birth:</label> <br>
+		  <input type="date" id="txtDate" name="txtDate" value="" size="20" maxlength ="250" required><br/><br/>
+	  </fieldset>
+	  
+	  <fieldset>
+		  <legend>Tell me about your preferences</legend>
+		  <label for="flower">Your favorite flower color:</label> <br/>
+		  <input type="color" id="flower" name="flower" value="Your favorite flower color" ><br/><br/>
+		  <label fr="message">Message:</label> <br/>
+		  <textarea id="message" name="message" value="Type your Message" rows="10" cols="50" maxlength="1000"> </textarea><br/><br/>
+	  </fieldset>
+	  
+	  <fieldset>
+		  <legend>Let's stay in touch</legend>
+		  <label for="source">How did you find out about me?</label>
+		  <select name="source">
+			  <option value="Google" selected>Google</option>
+			  <option value="news">News article</option>
+			  <option value="friend">Friend</option>
+			  <option value="other">Other</option><br/>
+		  </select><br/><br/>
+
+		  <label>Please indicate if you want to receive updates via email:</label><br/>
+		  <input type="checkbox" id="signup" name="signup" value="yes">Yes, please update me!<br/><br/>
+		  <label for="email">Please provide your email address:</label><br/>
+		  <input type="email" id="email" name="email" value="" Placeholder = "abc@defg.com" required ><br/><br/>
+		  <label for="phone">Please provide your phone number (with no dashes or spaces):</label><br/>
+		  <input type="text" id="phone" required><br/><br/>
+		  <label for="pswrd">Choose a password:</label><br/>
+		  <input type="password" id="pswrd" name="pswrd" value="" size="20" maxlength="20"><br/>
+	  </fieldset>
+	  
+	  <fieldset>
+	  	  <input type ="image" src="images/submit.png" alt="Submit" name= "btnimage" value ="Submit">
+	  </fieldset>
+	  
+	  </form>
+	  	
+	</div> <!-- Close content -->
+	
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l12 s12">
+                <a href="austinle@andrew.cmu.edu"><img src="images/email.png"></a>
+                <a href="https://www.linkedin.com/in/austin-leung-25ab46179/" target="_blank"><img src="images/linkedin.png"></a>
+                <a href="https://www.facebook.com/kumquat.pi" target="_blank"><img src="images/facebook.png"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; 5032 Forbes Avenue<br/>
+        SMC 1592<br/>
+        Pittsburgh, PA 15289<br/>
+        917-943-1081 (c)<br/><br/>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
